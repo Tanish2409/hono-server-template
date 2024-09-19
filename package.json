@@ -1,0 +1,45 @@
+{
+  "name": "hono-server",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "imports": {
+    "#root/*": "./build/src/*"
+  },
+  "author": "Tanish Agarwal <tanishagarwal1998@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "format": "eslint . --fix",
+    "typecheck": "tsc",
+    "build": "tsc --noEmit false",
+    "dev": "tsc-watch --onSuccess \"tsx ./src/main.ts\"",
+    "start": "tsc && tsx ./src/main.ts",
+    "start:force": "tsx ./src/main.ts",
+    "prepare": "husky || true"
+  },
+  "dependencies": {
+    "@hono/node-server": "1.12.0",
+    "hono": "4.5.10",
+    "pino": "9.3.2",
+    "pino-pretty": "11.2.2",
+    "tsx": "4.18.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "2.26.0",
+    "@types/node": "^20.14.12",
+    "eslint": "^9.10.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.9",
+    "tsc-watch": "^6.2.0",
+    "typescript": "^5.5.4"
+  },
+  "lint-staged": {
+    "*.ts": "eslint"
+  }
+}
